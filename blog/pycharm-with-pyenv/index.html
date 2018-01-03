@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tags</title>
+        <title>Getting PyCharm to work with pyenv local</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.32.2" />
         
-        <link href="https://craigrosie.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="Craig Rosie" />
-        <link href="https://craigrosie.github.io/tags/index.xml" rel="feed" type="application/rss+xml" title="Craig Rosie" />
-        
         
         
     </head>
@@ -80,7 +77,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Tags</a>
+                    <a class="navbar-brand visible-xs" href="#">Getting PyCharm to work with pyenv local</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,9 +118,7 @@
 
 <main>
 
-    <h2>Tags</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -132,72 +127,58 @@
     
     
 
-    <h4><a href="/tags/pycharm/">Pycharm</a></h4>
+    <h4><a href="/blog/pycharm-with-pyenv/">Getting PyCharm to work with pyenv local</a></h4>
     <h5>October 7, 2015</h5>
     
-
-</div>
-  <div class="item">
-
+    <a href="https://craigrosie.github.iotags/python">
+        <kbd class="item-tag">python</kbd>
+    </a>
     
+    <a href="https://craigrosie.github.iotags/pycharm">
+        <kbd class="item-tag">pycharm</kbd>
+    </a>
     
-    
-
-    
-    
-
-    <h4><a href="/tags/pyenv/">Pyenv</a></h4>
-    <h5>October 7, 2015</h5>
+    <a href="https://craigrosie.github.iotags/pyenv">
+        <kbd class="item-tag">pyenv</kbd>
+    </a>
     
 
 </div>
-  <div class="item">
 
-    
-    
-    
 
-    
-    
+    <br> <div class="text-justify"><p>I write the majority of my code in <a href="http://www.sublimetext.com/3">Sublime Text</a>, favouring it over a full blown IDE like <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> or <a href="https://eclipse.org/">Eclipse</a>. However, I cannot argue with the debugging abilities that an IDE provides.</p>
 
-    <h4><a href="/tags/python/">Python</a></h4>
-    <h5>October 12, 2015</h5>
-    
+<p>Recently I tried to use PyCharm&rsquo;s debugging functionality, and although when adding the folder as a PyCharm project and specifying the relevant <a href="https://github.com/yyuu/pyenv-virtualenv">pyenv virtualenv</a><sup>1</sup> Python path (see image below), PyCharm just could not seem to find it.</p>
 
+<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-add-project.png" alt="pyenv-add-project" /></p>
+
+<p>After a bit of prodding and poking, I discovered that in the main PyCharm preferences, the Project Interpreter was still set to the pyenv global Python version, like so:</p>
+
+<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-project-interpreter-3.4.3.png" alt="pyenv-interpreter-3.4.3" /></p>
+
+<p>Changing this to use the pyenv virtualenv Python path for the project fixed things, and allowed me to debug my script.</p>
+
+<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-project-interpreter-virtualenv.png" alt="pyenv-interpreter-virtualenv" /></p>
+
+<p>This was definitely not an obvious fix (although admittedly I have very little PyCharm experience), so I hope it helps someone else out. I know I&rsquo;ll refer back to this when I inevitably run into the same issue again in ~6 months!</p>
+
+<p><strong>Notes:</strong></p>
+
+<ol>
+<li>If you want to learn more about <a href="https://github.com/yyuu/pyenv">pyenv</a> and <a href="https://github.com/yyuu/pyenv-virtualenv">pyenv virtualenv</a> and why they&rsquo;re <strong>awesome</strong>, you can check out my <a href="/setting-up-pyenv-virtualenv.html">previous post!</a></li>
+</ol>
+
+<!--- Links -->
 </div>
-  <div class="item">
-
-    
-    
-    
 
     
     
 
-    <h4><a href="/tags/tqdm/">Tqdm</a></h4>
-    <h5>October 12, 2015</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
     
 
     
-    
-
-    <h4><a href="/tags/vim/">Vim</a></h4>
-    <h5>October 1, 2015</h5>
-    
-
-</div>
- 
 
 </main>
-
-
 
         <footer>
 

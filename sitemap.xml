@@ -3,17 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://craigrosie.github.io/blog/adding-a-progress-bar-to-python-script/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/blog/pycharm-with-pyenv/</loc>
+    <lastmod>2015-10-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/blog/setting-up-pyenv-virtualenv/</loc>
+    <lastmod>2015-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/blog/vim-copy-to-clipboard/</loc>
+    <lastmod>2015-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/blog/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://craigrosie.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://craigrosie.github.io/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/pycharm/</loc>
+    <lastmod>2015-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/pyenv/</loc>
+    <lastmod>2015-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/python/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://craigrosie.github.io/tags/</loc>
+    <lastmod>2015-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/tqdm/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/vim/</loc>
+    <lastmod>2015-10-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
