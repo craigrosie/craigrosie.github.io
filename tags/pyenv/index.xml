@@ -13,20 +13,20 @@
     
     <item>
       <title>Getting PyCharm to work with pyenv local</title>
-      <link>https://craigrosie.github.io/blog/pycharm-with-pyenv/</link>
+      <link>https://craigrosie.github.io/posts/pycharm-with-pyenv/</link>
       <pubDate>Wed, 07 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://craigrosie.github.io/blog/pycharm-with-pyenv/</guid>
+      <guid>https://craigrosie.github.io/posts/pycharm-with-pyenv/</guid>
       <description>I write the majority of my code in Sublime Text, favouring it over a full blown IDE like PyCharm or Eclipse. However, I cannot argue with the debugging abilities that an IDE provides.
 Recently I tried to use PyCharm&amp;rsquo;s debugging functionality, and although when adding the folder as a PyCharm project and specifying the relevant pyenv virtualenv1 Python path (see image below), PyCharm just could not seem to find it.</description>
     </item>
     
     <item>
       <title>Setting up pyenv and pyenv-virtualenv</title>
-      <link>https://craigrosie.github.io/blog/setting-up-pyenv-virtualenv/</link>
+      <link>https://craigrosie.github.io/posts/setting-up-pyenv-virtualenv/</link>
       <pubDate>Sun, 04 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://craigrosie.github.io/blog/setting-up-pyenv-virtualenv/</guid>
+      <guid>https://craigrosie.github.io/posts/setting-up-pyenv-virtualenv/</guid>
       <description>I have a confession to make; I&amp;rsquo;ve only been using Python virtualenvs for about 6 months (I&amp;rsquo;ve been working with Python for ~2 years now).
 To be honest, by the time I&amp;rsquo;d been introduced to them, I&amp;rsquo;d already royally screwed up my default Python&amp;rsquo;s site-packages, and I was developing on Windows, so virtualenvs just seemed like a lot of hassle. Anyway, everything mostly seemed to sort of work, so why change anything, right?</description>
     </item>

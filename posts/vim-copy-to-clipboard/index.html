@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tags</title>
+        <title>Copy to the clipboard in Vim</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.32.2" />
         
-        <link href="https://craigrosie.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="Craig Rosie" />
-        <link href="https://craigrosie.github.io/tags/index.xml" rel="feed" type="application/rss+xml" title="Craig Rosie" />
-        
         
         
     </head>
@@ -80,7 +77,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Tags</a>
+                    <a class="navbar-brand visible-xs" href="#">Copy to the clipboard in Vim</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,9 +118,7 @@
 
 <main>
 
-    <h2>Tags</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -132,72 +127,56 @@
     
     
 
-    <h4><a href="/tags/pycharm/">Pycharm</a></h4>
-    <h5>October 7, 2015</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/tags/pyenv/">Pyenv</a></h4>
-    <h5>October 7, 2015</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/tags/python/">Python</a></h4>
-    <h5>October 12, 2015</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/tags/tqdm/">Tqdm</a></h4>
-    <h5>October 12, 2015</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/tags/vim/">Vim</a></h4>
+    <h4><a href="/posts/vim-copy-to-clipboard/">Copy to the clipboard in Vim</a></h4>
     <h5>October 1, 2015</h5>
     
+    <a href="https://craigrosie.github.iotags/vim">
+        <kbd class="item-tag">vim</kbd>
+    </a>
+    
 
 </div>
- 
+
+
+    <br> <div class="text-justify"><p>I love using Vim for making quick changes to files when I&rsquo;m working on the command line. I even use the Vim keyboard shortcuts in Sublime Text, and these days I struggle to use any text editor that does not allow me to enable Vim key bindings.</p>
+
+<p>Recently, I found myself needing to copy text to the clipboard from a text file that I had open in Vim. I am pretty ashamed to say that I didn&rsquo;t think there&rsquo;d be a key combination to allow me to do this, so I always resorted to using the mouse.</p>
+
+<p>This was getting pretty tedious - I mean, the whole point of Vim is that you shouldn&rsquo;t ever need a mouse! <em>Obviously</em> there is a way to do it with the keyboard!</p>
+
+<p>Here we go:</p>
+
+<pre><code>  &quot;*y
+</code></pre>
+
+<p>Wait, what? Let&rsquo;s break that down:</p>
+
+<ul>
+<li><code>&quot;</code> - specify a register</li>
+<li><code>*</code> - use the <code>*</code> (clipboard) register</li>
+<li><code>y</code> - standard Vim yank command</li>
+</ul>
+
+<p><strong>Note:</strong> You will need to have a section of text visually selected to use this command (i.e. by using the <code>v</code> Vim command)</p>
+
+<p>You can also paste in a similar way:</p>
+
+<pre><code>  &quot;*p
+</code></pre>
+
+<p>More information can be found in <a href="http://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-using-vim">this StackOverflow thread</a></p>
+
+<!--- Links -->
+</div>
+
+    
+    
+
+    
+
+    
 
 </main>
-
-
 
         <footer>
 

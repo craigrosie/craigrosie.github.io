@@ -13,39 +13,39 @@
     
     <item>
       <title>Adding a progress bar to your Python script</title>
-      <link>https://craigrosie.github.io/blog/adding-a-progress-bar-to-python-script/</link>
+      <link>https://craigrosie.github.io/posts/adding-a-progress-bar-to-python-script/</link>
       <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://craigrosie.github.io/blog/adding-a-progress-bar-to-python-script/</guid>
+      <guid>https://craigrosie.github.io/posts/adding-a-progress-bar-to-python-script/</guid>
       <description>The problem? You&amp;rsquo;re writing a Python script which carries out some tasks in a loop. Maybe you&amp;rsquo;re processing data in a bunch of files, or scraping a list of websites. Whatever it is, the task takes anything from a few seconds to a few minutes to complete. Wouldn&amp;rsquo;t it be great if you could visualise progress (in the command line no less!) easily, and without some ugly print() statements in your code?</description>
     </item>
     
     <item>
       <title>Getting PyCharm to work with pyenv local</title>
-      <link>https://craigrosie.github.io/blog/pycharm-with-pyenv/</link>
+      <link>https://craigrosie.github.io/posts/pycharm-with-pyenv/</link>
       <pubDate>Wed, 07 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://craigrosie.github.io/blog/pycharm-with-pyenv/</guid>
+      <guid>https://craigrosie.github.io/posts/pycharm-with-pyenv/</guid>
       <description>I write the majority of my code in Sublime Text, favouring it over a full blown IDE like PyCharm or Eclipse. However, I cannot argue with the debugging abilities that an IDE provides.
 Recently I tried to use PyCharm&amp;rsquo;s debugging functionality, and although when adding the folder as a PyCharm project and specifying the relevant pyenv virtualenv1 Python path (see image below), PyCharm just could not seem to find it.</description>
     </item>
     
     <item>
       <title>Setting up pyenv and pyenv-virtualenv</title>
-      <link>https://craigrosie.github.io/blog/setting-up-pyenv-virtualenv/</link>
+      <link>https://craigrosie.github.io/posts/setting-up-pyenv-virtualenv/</link>
       <pubDate>Sun, 04 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://craigrosie.github.io/blog/setting-up-pyenv-virtualenv/</guid>
+      <guid>https://craigrosie.github.io/posts/setting-up-pyenv-virtualenv/</guid>
       <description>I have a confession to make; I&amp;rsquo;ve only been using Python virtualenvs for about 6 months (I&amp;rsquo;ve been working with Python for ~2 years now).
 To be honest, by the time I&amp;rsquo;d been introduced to them, I&amp;rsquo;d already royally screwed up my default Python&amp;rsquo;s site-packages, and I was developing on Windows, so virtualenvs just seemed like a lot of hassle. Anyway, everything mostly seemed to sort of work, so why change anything, right?</description>
     </item>
     
     <item>
       <title>Copy to the clipboard in Vim</title>
-      <link>https://craigrosie.github.io/blog/vim-copy-to-clipboard/</link>
+      <link>https://craigrosie.github.io/posts/vim-copy-to-clipboard/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://craigrosie.github.io/blog/vim-copy-to-clipboard/</guid>
+      <guid>https://craigrosie.github.io/posts/vim-copy-to-clipboard/</guid>
       <description>I love using Vim for making quick changes to files when I&amp;rsquo;m working on the command line. I even use the Vim keyboard shortcuts in Sublime Text, and these days I struggle to use any text editor that does not allow me to enable Vim key bindings.
 Recently, I found myself needing to copy text to the clipboard from a text file that I had open in Vim. I am pretty ashamed to say that I didn&amp;rsquo;t think there&amp;rsquo;d be a key combination to allow me to do this, so I always resorted to using the mouse.</description>
     </item>

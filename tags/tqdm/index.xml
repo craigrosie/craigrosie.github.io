@@ -13,10 +13,10 @@
     
     <item>
       <title>Adding a progress bar to your Python script</title>
-      <link>https://craigrosie.github.io/blog/adding-a-progress-bar-to-python-script/</link>
+      <link>https://craigrosie.github.io/posts/adding-a-progress-bar-to-python-script/</link>
       <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://craigrosie.github.io/blog/adding-a-progress-bar-to-python-script/</guid>
+      <guid>https://craigrosie.github.io/posts/adding-a-progress-bar-to-python-script/</guid>
       <description>The problem? You&amp;rsquo;re writing a Python script which carries out some tasks in a loop. Maybe you&amp;rsquo;re processing data in a bunch of files, or scraping a list of websites. Whatever it is, the task takes anything from a few seconds to a few minutes to complete. Wouldn&amp;rsquo;t it be great if you could visualise progress (in the command line no less!) easily, and without some ugly print() statements in your code?</description>
     </item>
     

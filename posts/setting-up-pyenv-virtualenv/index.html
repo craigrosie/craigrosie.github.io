@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Setting up pyenv and pyenv-virtualenv</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: DarkSlateGrey;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://craigrosie.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.32.2" />
+        
+        
+        
+    </head>
+
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Setting up pyenv and pyenv-virtualenv</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/posts/setting-up-pyenv-virtualenv/">Setting up pyenv and pyenv-virtualenv</a></h4>
+    <h5>October 4, 2015</h5>
+    
+    <a href="https://craigrosie.github.iotags/python">
+        <kbd class="item-tag">python</kbd>
+    </a>
+    
+    <a href="https://craigrosie.github.iotags/pyenv">
+        <kbd class="item-tag">pyenv</kbd>
+    </a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>I have a confession to make; I&rsquo;ve only been using Python virtualenvs for about 6 months (I&rsquo;ve been working with Python for ~2 years now).</p>
+
+<p>To be honest, by the time I&rsquo;d been introduced to them, I&rsquo;d already royally screwed up my default Python&rsquo;s <code>site-packages</code>, <em>and</em> I was developing on Windows, so virtualenvs just seemed like a lot of hassle. Anyway, everything mostly seemed to sort of work, so why change anything, <em>right</em>?</p>
+
+<p><strong>Wrong.</strong> However much hassle, you might think virtualenvs are, spending hours debugging some obscure issue because you and your colleague have <em>ever-so-slightly</em> different versions of some third-party Python library will always be worse.</p>
+
+<h4 id="pyenv">pyenv</h4>
+
+<p><a href="https://github.com/yyuu/pyenv">pyenv</a> is a life-saver if you have to work with multiple versions of Python. Even if you don&rsquo;t, I&rsquo;d recommend installing it, as it makes installing new versions of Python insanely easy. How easy you ask?</p>
+
+<pre><code class="language-bash">$ pyenv install 3.5.0
+</code></pre>
+
+<p>Now that you&rsquo;ve installed a new version, <a href="https://github.com/yyuu/pyenv">pyenv</a> also makes it easy to change the default version used on your system:</p>
+
+<pre><code class="language-bash">$ pyenv global 3.5.0
+</code></pre>
+
+<p>You can even set multiple global versions at once:</p>
+
+<pre><code class="language-bash">$ pyenv global 2.7.10 3.5.0
+$ python --version
+Python 2.7.10
+$ python2 --version
+Python 2.7.10
+$ python3 --version
+Python 3.5.0
+</code></pre>
+
+<p><strong>Note:</strong> whichever version you specify first will take precedence when you just type <code>python</code>.</p>
+
+<p><a href="https://github.com/yyuu/pyenv">pyenv</a> also has a <code>local</code> command, but I&rsquo;ll get onto that in a minute&hellip;</p>
+
+<h4 id="pyenv-virtualenv">pyenv-virtualenv</h4>
+
+<p><a href="https://github.com/yyuu/pyenv-virtualenv">pyenv-virtualenv</a>, as you might have guessed, combines excellently with <a href="https://github.com/yyuu/pyenv">pyenv</a>. Creating a new virtualenv is as easy as:</p>
+
+<pre><code class="language-bash">$ pyenv virtualenv 3.5.0 project-virtualenv.3.5.0
+</code></pre>
+
+<p>where <code>3.5.0</code> is the version of Python that you want to use (that you&rsquo;ve already installed with <a href="https://github.com/yyuu/pyenv">pyenv</a>!), and <code>project-virtualenv.3.5.0</code> is the name of your new virtualenv. I find appending the Python version to the end of the virtualenv name is a good habit to get into, as I never to work out which version of Python I&rsquo;m currently using.</p>
+
+<p>Which leads me on to my next point; <a href="https://github.com/yyuu/pyenv">pyenv</a> now treats this new virtualenv as a version of Python (you should see it listed if you run <code>pyenv versions</code>). Combining this with <a href="https://github.com/yyuu/pyenv">pyenv</a>&rsquo;s ability to set <code>local</code> versions, you can have <a href="https://github.com/yyuu/pyenv">pyenv</a> <em>automatically activate</em> the correct virtualenv when you <code>cd</code> into the directory.</p>
+
+<h4 id="automate-all-the-things">Automate all the things!</h4>
+
+<p>As easy as <a href="https://github.com/yyuu/pyenv">pyenv</a> and <a href="https://github.com/yyuu/pyenv-virtualenv">pyenv-virtualenv</a> make it create new virtualenvs, the automation can still be taken one step further. A lot of my work at the moment involves writing ad-hoc scripts to do some data-processing, creating a super-quick POC, or helping out colleagues who are using Python 2.7, and repeatedly typing out</p>
+
+<pre><code class="language-bash">$ mkdir ad-hoc-project
+$ cd ad-hoc-project
+$ pyenv virtualenv 2.7.10 ad-hoc-project.2.7.10
+$ pyenv local ad-hoc-project.2.7.10
+$ pip install pylint  # for Python linting in Sublime Text
+$ pip install -r requirements.txt  # Sometimes I'd be working on an existing repo
+</code></pre>
+
+<p>got a bit tedious. I quickly realised  I could automate this with a bash function:</p>
+
+<pre><code class="language-bash">function pynew() {
+    mkdir -p &quot;$1&quot; &amp;&amp; cd &quot;$1&quot; &amp;&amp;  # passing `-p` means it doesn't fail if the dir exists
+    pyenv virtualenv &quot;$2&quot; &quot;$1&quot;-&quot;$2&quot; &amp;&amp;  # create the new virtualenv
+    pyenv local &quot;$1&quot;-&quot;$2&quot; &amp;&amp;  # set the new virtualenv to be the local Python version
+    pipup &amp;&amp;  # a bash alias for pip install --upgrade pip
+    pip install pylint &amp;&amp;  # for Python linting in Sublime Text
+    [ -e &quot;requirements.txt&quot; ] &amp;&amp;  # check if requirements.txt exists...
+    pip install -r requirements.txt  # ...and if it does, install it
+}
+</code></pre>
+
+<p>We can call the new bash function like so:</p>
+
+<pre><code class="language-bash">pynew ad-hoc-project 2.7.10
+</code></pre>
+
+<p>Success!</p>
+
+<h5 id="notes">Notes</h5>
+
+<ul>
+<li>You can find installation instructions for <a href="https://github.com/yyuu/pyenv#installation">pyenv here</a> and p<a href="https://github.com/yyuu/pyenv-virtualenv#installation">yenv-virtualenv here</a>.</li>
+<li>For more handy bash functions and aliases, you can check out my <a href="https://github.com/craigrosie/prefs">prefs</a> GitHub repo. I&rsquo;ll be doing a blog post on this soon.</li>
+</ul>
+
+<!--- Links -->
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

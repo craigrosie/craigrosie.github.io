@@ -3,29 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://craigrosie.github.io/blog/adding-a-progress-bar-to-python-script/</loc>
+    <loc>https://craigrosie.github.io/posts/adding-a-progress-bar-to-python-script/</loc>
     <lastmod>2015-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://craigrosie.github.io/blog/pycharm-with-pyenv/</loc>
+    <loc>https://craigrosie.github.io/posts/pycharm-with-pyenv/</loc>
     <lastmod>2015-10-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://craigrosie.github.io/blog/setting-up-pyenv-virtualenv/</loc>
+    <loc>https://craigrosie.github.io/posts/setting-up-pyenv-virtualenv/</loc>
     <lastmod>2015-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://craigrosie.github.io/blog/vim-copy-to-clipboard/</loc>
+    <loc>https://craigrosie.github.io/posts/vim-copy-to-clipboard/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://craigrosie.github.io/blog/</loc>
-    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -35,6 +29,12 @@
   
   <url>
     <loc>https://craigrosie.github.io/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/posts/</loc>
     <lastmod>2015-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
