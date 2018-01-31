@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command Line on Craig Rosie</title>
+    <link>https://craigrosie.github.io/tags/command-line/</link>
+    <description>Recent content in Command Line on Craig Rosie</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://craigrosie.github.io/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Essential Command Line Tools: xmllint</title>
+      <link>https://craigrosie.github.io/posts/essential-command-line-tools-xmllint/</link>
+      <pubDate>Wed, 31 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://craigrosie.github.io/posts/essential-command-line-tools-xmllint/</guid>
+      <description>I currently spend a lot of my time at the command line, so I thought I&amp;rsquo;d start a series on tools that are essential to my workflow. Some of these will be well known tools, and others less so, but hopefully there&amp;rsquo;s something useful for everyone!
+xmllint What is it? xmllint is a command line XML tool.
+How do I get it? It&amp;rsquo;s built in to MacOS (ships with the libxml2 package) 🎉</description>
+    </item>
+    
+  </channel>
+</rss>

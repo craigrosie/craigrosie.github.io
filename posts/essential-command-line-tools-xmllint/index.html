@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Vim</title>
+        <title>Essential Command Line Tools: xmllint</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.34" />
         
-        <link href="https://craigrosie.github.io/tags/vim/index.xml" rel="alternate" type="application/rss+xml" title="Craig Rosie" />
-        <link href="https://craigrosie.github.io/tags/vim/index.xml" rel="feed" type="application/rss+xml" title="Craig Rosie" />
-        
 
         
     </head>
@@ -80,7 +77,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Vim</a>
+                    <a class="navbar-brand visible-xs" href="#">Essential Command Line Tools: xmllint</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -125,9 +122,7 @@
 
 <main>
 
-    <h2>Vim</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -136,20 +131,94 @@
     
     
 
-    <h4><a href="/posts/vim-copy-to-clipboard/">Copy to the clipboard in Vim</a></h4>
-    <h5>October 1, 2015</h5>
+    <h4><a href="/posts/essential-command-line-tools-xmllint/">Essential Command Line Tools: xmllint</a></h4>
+    <h5>January 31, 2018</h5>
     
-    <a href="https://craigrosie.github.iotags/vim">
-        <kbd class="item-tag">vim</kbd>
+    <a href="https://craigrosie.github.iotags/command%20line">
+        <kbd class="item-tag">command line</kbd>
+    </a>
+    
+    <a href="https://craigrosie.github.iotags/xml">
+        <kbd class="item-tag">xml</kbd>
     </a>
     
 
 </div>
- 
+
+
+    <br> <div class="text-justify">
+
+<p><em>I currently spend a lot of my time at the command line, so I thought I&rsquo;d start a series on tools that are essential to my workflow. Some of these will be well known tools, and others less so, but hopefully there&rsquo;s something useful for everyone!</em></p>
+
+<h1 id="xmllint">xmllint</h1>
+
+<h2 id="what-is-it">What is it?</h2>
+
+<p>xmllint is a command line XML tool.</p>
+
+<h2 id="how-do-i-get-it">How do I get it?</h2>
+
+<p>It&rsquo;s built in to MacOS (ships with the <code>libxml2</code> package) 🎉</p>
+
+<h2 id="why-is-it-useful">Why is it useful?</h2>
+
+<p>Do you ever find yourself reading XML formatted like this?</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;shiporder orderid=&quot;889923&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;shiporder.xsd&quot;&gt; &lt;orderperson&gt;John Smith&lt;/orderperson&gt; &lt;shipto&gt; &lt;name&gt;Ola Nordmann&lt;/name&gt; &lt;address&gt;Langgt 23&lt;/address&gt; &lt;city&gt;4000 Stavanger&lt;/city&gt; &lt;country&gt;Norway&lt;/country&gt; &lt;/shipto&gt; &lt;item&gt; &lt;title&gt;Empire Burlesque&lt;/title&gt; &lt;note&gt;Special Edition&lt;/note&gt; &lt;quantity&gt;1&lt;/quantity&gt; &lt;price&gt;10.90&lt;/price&gt; &lt;/item&gt; &lt;item&gt; &lt;title&gt;Hide your heart&lt;/title&gt; &lt;quantity&gt;1&lt;/quantity&gt; &lt;price&gt;9.90&lt;/price&gt; &lt;/item&gt; &lt;/shiporder&gt;
+</code></pre>
+
+<p><em>Example XML taken from <a href="https://www.w3schools.com/xml/schema_example.asp">W3Schools</a></em></p>
+
+<p>Now imagine working on a 100+mb XML file with over 100mil characters&hellip; If only we could format the XML nicely, it might be a bit easier to read.</p>
+
+<p>This is where <code>xmllint</code> comes in:</p>
+
+<pre><code class="language-bash">xmllint --format example.xml
+</code></pre>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;shiporder xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; orderid=&quot;889923&quot; xsi:noNamespaceSchemaLocation=&quot;shiporder.xsd&quot;&gt;
+  &lt;orderperson&gt;John Smith&lt;/orderperson&gt;
+  &lt;shipto&gt;
+    &lt;name&gt;Ola Nordmann&lt;/name&gt;
+    &lt;address&gt;Langgt 23&lt;/address&gt;
+    &lt;city&gt;4000 Stavanger&lt;/city&gt;
+    &lt;country&gt;Norway&lt;/country&gt;
+  &lt;/shipto&gt;
+  &lt;item&gt;
+    &lt;title&gt;Empire Burlesque&lt;/title&gt;
+    &lt;note&gt;Special Edition&lt;/note&gt;
+    &lt;quantity&gt;1&lt;/quantity&gt;
+    &lt;price&gt;10.90&lt;/price&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;title&gt;Hide your heart&lt;/title&gt;
+    &lt;quantity&gt;1&lt;/quantity&gt;
+    &lt;price&gt;9.90&lt;/price&gt;
+  &lt;/item&gt;
+&lt;/shiporder&gt;
+</code></pre>
+
+<p>Much easier to read!</p>
+
+<p>And of course, since <code>xmllint</code> is used via the command line, you can use all the other tools and tricks available to you to do further processing:</p>
+
+<pre><code class="language-bash">xmllint --format example.xml &gt; formatted.xml  # Write formatted output to new file
+
+xmllint --format example.xml | wc -l  # Get number of lines in the XML document
+
+xmllint --format example.xml | grep -A 3 -B 1 &quot;Hide your heart&quot;  # Find details of item called &quot;Hide your heart&quot;
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+    
 
 </main>
-
-
 
         <footer>
 

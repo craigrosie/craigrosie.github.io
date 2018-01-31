@@ -6,10 +6,21 @@
     <description>Recent content on Craig Rosie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://craigrosie.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Essential Command Line Tools: xmllint</title>
+      <link>https://craigrosie.github.io/posts/essential-command-line-tools-xmllint/</link>
+      <pubDate>Wed, 31 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://craigrosie.github.io/posts/essential-command-line-tools-xmllint/</guid>
+      <description>I currently spend a lot of my time at the command line, so I thought I&amp;rsquo;d start a series on tools that are essential to my workflow. Some of these will be well known tools, and others less so, but hopefully there&amp;rsquo;s something useful for everyone!
+xmllint What is it? xmllint is a command line XML tool.
+How do I get it? It&amp;rsquo;s built in to MacOS (ships with the libxml2 package) 🎉</description>
+    </item>
     
     <item>
       <title>Adding a progress bar to your Python script</title>
