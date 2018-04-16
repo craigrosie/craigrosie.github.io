@@ -6,10 +6,22 @@
     <description>Recent content in Python on Craig Rosie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://craigrosie.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Beware ujson.dumps() Precision</title>
+      <link>https://craigrosie.github.io/posts/beware-ujson-dumps-precision/</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://craigrosie.github.io/posts/beware-ujson-dumps-precision/</guid>
+      <description>Are you using u(ltra)json over the standard library&amp;rsquo;s json module due to the performance benefits?
+Until recently, I was too, but then I discovered that usjon.dumps() loses a lot of &amp;ldquo;precision&amp;rdquo; in floats compared to json.dumps():
+&amp;gt;&amp;gt;&amp;gt; ujson.dumps(1.3959197885670265) &#39;1.3959197886&#39; &amp;gt;&amp;gt;&amp;gt; json.dumps(1.3959197885670265) &#39;1.3959197885670265&#39;  You might now be thinking to yourself, doesn&amp;rsquo;t usjon.dumps() take a double_precisionparameter that allows you to control the &amp;ldquo;maximum digit precision of doubles&amp;rdquo;?
+Well, you would be correct.</description>
+    </item>
     
     <item>
       <title>Adding a progress bar to your Python script</title>

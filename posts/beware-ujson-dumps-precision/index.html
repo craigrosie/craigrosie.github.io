@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tags</title>
+        <title>Beware ujson.dumps() Precision</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.38.2" />
         
-        <link href="https://craigrosie.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="Craig Rosie" />
-        <link href="https://craigrosie.github.io/tags/index.xml" rel="feed" type="application/rss+xml" title="Craig Rosie" />
-        
 
         
     </head>
@@ -80,7 +77,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Tags</a>
+                    <a class="navbar-brand visible-xs" href="#">Beware ujson.dumps() Precision</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -125,9 +122,7 @@
 
 <main>
 
-    <h2>Tags</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -136,56 +131,52 @@
     
     
 
-    <h4><a href="/tags/tqdm/">Tqdm</a></h4>
-    <h5>October 12, 2015</h5>
+    <h4><a href="/posts/beware-ujson-dumps-precision/">Beware ujson.dumps() Precision</a></h4>
+    <h5>March 16, 2018</h5>
     
-
-</div>
-  <div class="item">
-
+    <a href="https://craigrosie.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
     
-    
-    
-
-    
-    
-
-    <h4><a href="/tags/vim/">Vim</a></h4>
-    <h5>October 1, 2015</h5>
+    <a href="https://craigrosie.github.io/tags/json"><kbd class="item-tag">json</kbd></a>
     
 
 </div>
-  <div class="item">
 
-    
-    
-    
 
-    
-    
+    <br> <div class="text-justify"><p>Are you using <a href="https://github.com/esnme/ultrajson">u(ltra)json</a> over the standard library&rsquo;s <a href="https://docs.python.org/3/library/json.html">json</a> module due to the <a href="https://github.com/esnme/ultrajson#benchmarks">performance benefits</a>?</p>
 
-    <h4><a href="/tags/xml/">Xml</a></h4>
-    <h5>January 31, 2018</h5>
-    
+<p>Until recently, I was too, but then I discovered that <code>usjon.dumps()</code> loses a lot of &ldquo;precision&rdquo; in floats compared to <code>json.dumps()</code>:</p>
 
+<pre><code class="language-python">&gt;&gt;&gt; ujson.dumps(1.3959197885670265)
+'1.3959197886'
+
+&gt;&gt;&gt; json.dumps(1.3959197885670265)
+'1.3959197885670265'
+</code></pre>
+
+<p>You might now be thinking to yourself, doesn&rsquo;t <code>usjon.dumps()</code> take a <code>double_precision</code>parameter that allows you to control the <a href="https://github.com/esnme/ultrajson/blob/42044fef11c3cac897e71907fe9e63a4dcfecb91/python/ujson.c#L56">&ldquo;maximum digit precision of doubles&rdquo;</a>?</p>
+
+<p>Well, you would be correct. Let&rsquo;s try it:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; ujson.dumps(1.3959197885670265, double_precision=20)
+'1.395919788567026'
+
+&gt;&gt;&gt; json.dumps(1.3959197885670265)
+'1.3959197885670265'
+</code></pre>
+
+<p>OK, so <code>'1.395919788567026'</code> is definitely more &ldquo;precise&rdquo; than &lsquo;1.3959197886&rsquo; which was returned by the call without the <code>double_precision</code> argument. However, if you look closely you&rsquo;ll notice that even with <code>double_precision=20</code> there&rsquo;s still a single place of precision lost by <code>ujson.dumps()</code> compared to <code>json.dumps()</code>. This is despite the fact that setting <code>double_precision</code> to <code>20</code> should be more than enough to retain the full precision of the float in the example.</p>
+
+<p>At the time of writing, I can&rsquo;t find a way to force <code>ujson.dumps()</code> to use arbitrary float precision. Because of this, I&rsquo;ve switched back to plain old <code>json.dumps()</code> in the application where I originally discovered this issue, because not losing any precision is more important than performance.</p>
 </div>
- 
+
+    
+    
+
+    
+
+    
 
 </main>
-
-
-
-<div class="pages">
-
-    
-    <a class="icon pages-icon" href="/tags/" rel="prev">
-        <i class="fa fa-arrow-left"></i>
-    </a>
-     
-
-</div>
-
-
 
         <footer>
 
