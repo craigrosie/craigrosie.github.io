@@ -6,10 +6,21 @@
     <description>Recent content on Craig Rosie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://craigrosie.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Render Github Markdown From Vim</title>
+      <link>https://craigrosie.github.io/posts/render-github-markdown-from-vim/</link>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://craigrosie.github.io/posts/render-github-markdown-from-vim/</guid>
+      <description>If you work in tech, chances are that you&amp;rsquo;ve had to write some Markdown documents, and it is also reasonably likely that you&amp;rsquo;ve had to upload those Markdown documents to Github.
+Github (and other git-hosting sites) provide quite a decent in-browser Markdown editor, but for anything other than the smallest of changes, it can be quicker to use your day-to-day code editor.
+If you use vim, you might be wondering how you can preview the Markdown you&amp;rsquo;re writing to see exactly what it will look like once you&amp;rsquo;ve committed and pushed to Github.</description>
+    </item>
     
     <item>
       <title>Command Line Browser Shortcuts - Git</title>

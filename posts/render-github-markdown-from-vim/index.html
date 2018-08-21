@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Vim</title>
+        <title>Render Github Markdown From Vim</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.47.1" />
         
-        <link href="https://craigrosie.github.io/tags/vim/index.xml" rel="alternate" type="application/rss+xml" title="Craig Rosie" />
-        <link href="https://craigrosie.github.io/tags/vim/index.xml" rel="feed" type="application/rss+xml" title="Craig Rosie" />
-        
 
         
     </head>
@@ -80,7 +77,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Vim</a>
+                    <a class="navbar-brand visible-xs" href="#">Render Github Markdown From Vim</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -125,9 +122,7 @@
 
 <main>
 
-    <h2>Vim</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -147,27 +142,81 @@
     
 
 </div>
-  <div class="item">
 
-    
-    
-    
 
-    
-    
+    <br> <div class="text-justify">
 
-    <h4><a href="/posts/vim-copy-to-clipboard/">Copy to the clipboard in Vim</a></h4>
-    <h5>October 1, 2015</h5>
-    
-    <a href="https://craigrosie.github.io/tags/vim"><kbd class="item-tag">vim</kbd></a>
-    
+<p>If you work in tech, chances are that you&rsquo;ve had to write some Markdown documents, and it is also reasonably likely that you&rsquo;ve had to upload those Markdown documents to Github.</p>
 
+<p>Github (and other git-hosting sites) provide quite a decent in-browser Markdown editor, but for anything other than the smallest of changes, it can be quicker to use your day-to-day code editor.</p>
+
+<p>If you use vim, you might be wondering how you can preview the Markdown you&rsquo;re writing to see exactly what it will look like once you&rsquo;ve committed and pushed to Github.</p>
+
+<p>Thankfully, Github exposes its Markdown rendering <a href="https://developer.github.com/v3/markdown/">as an API</a>&hellip;</p>
+
+<p><img src="https://media.tenor.com/images/1460ad8261d8b5ff63593b4f6d325128/tenor.gif" alt="mind_blown.gif" /></p>
+
+<p>&hellip;and there&rsquo;s a vim plugin - <a href="https://github.com/JamshedVesuna/vim-markdown-preview">vim-markdown-preview</a> - that wraps the Github Markdown API* and allows you to preview your Markdown files in <a href="https://github.github.com/gfm/">Github Flavored Markdown (GFM)</a> right in your browser.</p>
+
+<h2 id="installing-requirements">Installing requirements</h2>
+
+<p>Instead of interacting with the Github Markdown API directly, <a href="https://github.com/JamshedVesuna/vim-markdown-preview">vim-markdown-preview</a> uses <a href="https://github.com/joeyespo/grip">grip</a> to do the heavy lifting. To install <a href="https://github.com/joeyespo/grip">grip</a>, you can use pip:</p>
+
+<pre><code class="language-bash">$ pip install grip
+</code></pre>
+
+<p>or brew:</p>
+
+<pre><code class="language-bash">$ brew install grip
+</code></pre>
+
+<p>Since <a href="https://github.com/joeyespo/grip">grip</a> requires access to a Github API, it is subject to Gitub&rsquo;s API <a href="https://developer.github.com/v3/rate_limit/">request limits</a>. Although it should be possible to use the API without authentication, you can quickly come up against the hourly rate limit if you are doing a lot of Markdown updates. To unlock a much higher rate limit, you can provide <a href="https://github.com/joeyespo/grip">grip</a> with authentication details for your Github account, by adding the following lines to <code>~/.grip/settings.py</code>:</p>
+
+<pre><code class="language-python">USERNAME = 'your-username'
+PASSWORD = 'your-personal-access-token'
+</code></pre>
+
+<p>(You can generate a Github personal access token by visiting <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>)</p>
+
+<p>For more details on authenticating with Github in <a href="https://github.com/joeyespo/grip">grip</a> (and other <a href="https://github.com/joeyespo/grip">grip</a>) settings, see the project&rsquo;s <a href="https://github.com/joeyespo/grip#configuration">README.md</a>.</p>
+
+<h2 id="setting-up-vim-markdown-preview">Setting up vim-markdown-preview</h2>
+
+<p>Add the <a href="https://github.com/JamshedVesuna/vim-markdown-preview">vim-markdown-preview</a> plugin to your vim plugin manager. I use <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>, so I&rsquo;ve added the following to my .vimrc:</p>
+
+<pre><code class="language-bash">Plugin 'JamshedVesuna/vim-markdown-preview'
+</code></pre>
+
+<p>I also override some default settings to make it integrate better with my current setup:</p>
+
+<pre><code class="language-bash"># Change the default shortcut for triggering the preview
+let vim_markdown_preview_hotkey='&lt;leader&gt;m'
+
+# Change the browser used for the preview to Google Chrome
+# (the default is Safari on OSX)
+let vim_markdown_preview_browser='Google Chrome'
+
+# Use grip and the Github Markdown API for rendering the preview
+let vim_markdown_preview_github=1
+</code></pre>
+
+<h2 id="final-result">Final result</h2>
+
+<p>To get a bit meta, here is this post, rendered using <a href="https://github.com/JamshedVesuna/vim-markdown-preview">vim-markdown-preview</a>:</p>
+
+<p><img src="/img/vim-markdown-preview.png" alt="Post rendered using vim-markdown-preview" /></p>
+
+<p><em>* rather, <a href="https://github.com/JamshedVesuna/vim-markdown-preview">vim-markdown-preview</a> wraps <a href="https://github.com/joeyespo/grip">grip</a>, which wraps the Github Markdown API</em></p>
 </div>
- 
+
+    
+    
+
+    
+
+    
 
 </main>
-
-
 
         <footer>
 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vim on Craig Rosie</title>
-    <link>https://craigrosie.github.io/tags/vim/</link>
-    <description>Recent content in Vim on Craig Rosie</description>
+    <title>Github on Craig Rosie</title>
+    <link>https://craigrosie.github.io/tags/github/</link>
+    <description>Recent content in Github on Craig Rosie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://craigrosie.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://craigrosie.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <description>If you work in tech, chances are that you&amp;rsquo;ve had to write some Markdown documents, and it is also reasonably likely that you&amp;rsquo;ve had to upload those Markdown documents to Github.
 Github (and other git-hosting sites) provide quite a decent in-browser Markdown editor, but for anything other than the smallest of changes, it can be quicker to use your day-to-day code editor.
 If you use vim, you might be wondering how you can preview the Markdown you&amp;rsquo;re writing to see exactly what it will look like once you&amp;rsquo;ve committed and pushed to Github.</description>
-    </item>
-    
-    <item>
-      <title>Copy to the clipboard in Vim</title>
-      <link>https://craigrosie.github.io/posts/vim-copy-to-clipboard/</link>
-      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://craigrosie.github.io/posts/vim-copy-to-clipboard/</guid>
-      <description>I love using Vim for making quick changes to files when I&amp;rsquo;m working on the command line. I even use the Vim keyboard shortcuts in Sublime Text, and these days I struggle to use any text editor that does not allow me to enable Vim key bindings.
-Recently, I found myself needing to copy text to the clipboard from a text file that I had open in Vim. I am pretty ashamed to say that I didn&amp;rsquo;t think there&amp;rsquo;d be a key combination to allow me to do this, so I always resorted to using the mouse.</description>
     </item>
     
   </channel>
