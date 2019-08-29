@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://craigrosie.github.io/posts/better-mac-bluetooth-audio-sony-wh-1000xm2/</loc>
+    <lastmod>2019-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/bluetooth/</loc>
+    <lastmod>2019-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://craigrosie.github.io/</loc>
-    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/mac/</loc>
+    <lastmod>2019-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/posts/</loc>
+    <lastmod>2019-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/</loc>
+    <lastmod>2019-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://craigrosie.github.io/tags/wh-1000xm2/</loc>
+    <lastmod>2019-08-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,17 +48,7 @@
   </url>
   
   <url>
-    <loc>https://craigrosie.github.io/posts/</loc>
-    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://craigrosie.github.io/posts/render-github-markdown-from-vim/</loc>
-    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://craigrosie.github.io/tags/</loc>
     <lastmod>2018-08-21T00:00:00+00:00</lastmod>
   </url>
   
