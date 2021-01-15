@@ -58,10 +58,6 @@ a:hover {
     color: var(--accent) !important;
 }
 
-p > a:link {
-    text-decoration: underline;
-}
-
 /*paginator at bottom of list view*/
 
 .pages {

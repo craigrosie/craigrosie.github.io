@@ -13,7 +13,7 @@
     }
 
     :root {
-        --accent: DarkSlateGrey;
+        --accent: DarkGreen;
         --border-width:  5px ;
     }
 
@@ -58,9 +58,9 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.57.2" />
+ <meta name="generator" content="Hugo 0.80.0" />
         
-
+        
         
     </head>
 
@@ -102,13 +102,11 @@
                     
                         <ul class="nav navbar-nav navbar-right">
                             
-                                <li class="navbar-icon"><a href="https://github.com/craigrosie/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://500px.com/craigrosiephotography" target="_blank"><i class="fa fa-500px"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1"><i class="fa fa-lastfm"></i></a></li>
                             
                         </ul>
                     
@@ -134,38 +132,33 @@
     <h4><a href="/posts/beware-ujson-dumps-precision/">Beware ujson.dumps() Precision</a></h4>
     <h5>April 16, 2018</h5>
     
-    <a href="https://craigrosie.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    <a href="https://craigrosie.github.io/tags/python">
+        <kbd class="item-tag">python</kbd>
+    </a>
     
-    <a href="https://craigrosie.github.io/tags/json"><kbd class="item-tag">json</kbd></a>
+    <a href="https://craigrosie.github.io/tags/json">
+        <kbd class="item-tag">json</kbd>
+    </a>
     
 
 </div>
 
 
     <br> <div class="text-justify"><p>Are you using <a href="https://github.com/esnme/ultrajson">u(ltra)json</a> over the standard library&rsquo;s <a href="https://docs.python.org/3/library/json.html">json</a> module due to the <a href="https://github.com/esnme/ultrajson#benchmarks">performance benefits</a>?</p>
-
 <p>Until recently, I was too, but then I discovered that <code>usjon.dumps()</code> loses a lot of &ldquo;precision&rdquo; in floats compared to <code>json.dumps()</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> ujson<span style="color:#f92672">.</span>dumps(<span style="color:#ae81ff">1.3959197885670265</span>)
+<span style="color:#e6db74">&#39;1.3959197886&#39;</span>
 
-<pre><code class="language-python">&gt;&gt;&gt; ujson.dumps(1.3959197885670265)
-'1.3959197886'
-
-&gt;&gt;&gt; json.dumps(1.3959197885670265)
-'1.3959197885670265'
-</code></pre>
-
-<p>You might now be thinking to yourself, doesn&rsquo;t <code>usjon.dumps()</code> take a <code>double_precision</code>parameter that allows you to control the <a href="https://github.com/esnme/ultrajson/blob/42044fef11c3cac897e71907fe9e63a4dcfecb91/python/ujson.c#L56">&ldquo;maximum digit precision of doubles&rdquo;</a>?</p>
-
+<span style="color:#f92672">&gt;&gt;&gt;</span> json<span style="color:#f92672">.</span>dumps(<span style="color:#ae81ff">1.3959197885670265</span>)
+<span style="color:#e6db74">&#39;1.3959197885670265&#39;</span>
+</code></pre></div><p>You might now be thinking to yourself, doesn&rsquo;t <code>usjon.dumps()</code> take a <code>double_precision</code>parameter that allows you to control the <a href="https://github.com/esnme/ultrajson/blob/42044fef11c3cac897e71907fe9e63a4dcfecb91/python/ujson.c#L56">&ldquo;maximum digit precision of doubles&rdquo;</a>?</p>
 <p>Well, you would be correct. Let&rsquo;s try it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> ujson<span style="color:#f92672">.</span>dumps(<span style="color:#ae81ff">1.3959197885670265</span>, double_precision<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)
+<span style="color:#e6db74">&#39;1.395919788567026&#39;</span>
 
-<pre><code class="language-python">&gt;&gt;&gt; ujson.dumps(1.3959197885670265, double_precision=20)
-'1.395919788567026'
-
-&gt;&gt;&gt; json.dumps(1.3959197885670265)
-'1.3959197885670265'
-</code></pre>
-
-<p>OK, so <code>'1.395919788567026'</code> is definitely more &ldquo;precise&rdquo; than &lsquo;1.3959197886&rsquo; which was returned by the call without the <code>double_precision</code> argument. However, if you look closely you&rsquo;ll notice that even with <code>double_precision=20</code> there&rsquo;s still a single place of precision lost by <code>ujson.dumps()</code> compared to <code>json.dumps()</code>. This is despite the fact that setting <code>double_precision</code> to <code>20</code> should be more than enough to retain the full precision of the float in the example.</p>
-
+<span style="color:#f92672">&gt;&gt;&gt;</span> json<span style="color:#f92672">.</span>dumps(<span style="color:#ae81ff">1.3959197885670265</span>)
+<span style="color:#e6db74">&#39;1.3959197885670265&#39;</span>
+</code></pre></div><p>OK, so <code>'1.395919788567026'</code> is definitely more &ldquo;precise&rdquo; than &lsquo;1.3959197886&rsquo; which was returned by the call without the <code>double_precision</code> argument. However, if you look closely you&rsquo;ll notice that even with <code>double_precision=20</code> there&rsquo;s still a single place of precision lost by <code>ujson.dumps()</code> compared to <code>json.dumps()</code>. This is despite the fact that setting <code>double_precision</code> to <code>20</code> should be more than enough to retain the full precision of the float in the example.</p>
 <p>At the time of writing, I can&rsquo;t find a way to force <code>ujson.dumps()</code> to use arbitrary float precision. Because of this, I&rsquo;ve switched back to plain old <code>json.dumps()</code> in the application where I originally discovered this issue, because not losing any precision is more important than performance.</p>
 </div>
 
@@ -180,7 +173,7 @@
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
        

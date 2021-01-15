@@ -13,7 +13,7 @@
     }
 
     :root {
-        --accent: DarkSlateGrey;
+        --accent: DarkGreen;
         --border-width:  5px ;
     }
 
@@ -58,9 +58,9 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.57.2" />
+ <meta name="generator" content="Hugo 0.80.0" />
         
-
+        
         
     </head>
 
@@ -102,13 +102,11 @@
                     
                         <ul class="nav navbar-nav navbar-right">
                             
-                                <li class="navbar-icon"><a href="https://github.com/craigrosie/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://500px.com/craigrosiephotography" target="_blank"><i class="fa fa-500px"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1"><i class="fa fa-lastfm"></i></a></li>
                             
                         </ul>
                     
@@ -134,78 +132,60 @@
     <h4><a href="/posts/essential-command-line-tools-xmllint/">Essential Command Line Tools: xmllint</a></h4>
     <h5>January 31, 2018</h5>
     
-    <a href="https://craigrosie.github.io/tags/command-line"><kbd class="item-tag">command line</kbd></a>
+    <a href="https://craigrosie.github.io/tags/command%20line">
+        <kbd class="item-tag">command line</kbd>
+    </a>
     
-    <a href="https://craigrosie.github.io/tags/xml"><kbd class="item-tag">xml</kbd></a>
+    <a href="https://craigrosie.github.io/tags/xml">
+        <kbd class="item-tag">xml</kbd>
+    </a>
     
 
 </div>
 
 
-    <br> <div class="text-justify">
-
-<p><em>I currently spend a lot of my time at the command line, so I thought I&rsquo;d start a series on tools that are essential to my workflow. Some of these will be well known tools, and others less so, but hopefully there&rsquo;s something useful for everyone!</em></p>
-
+    <br> <div class="text-justify"><p><em>I currently spend a lot of my time at the command line, so I thought I&rsquo;d start a series on tools that are essential to my workflow. Some of these will be well known tools, and others less so, but hopefully there&rsquo;s something useful for everyone!</em></p>
 <h1 id="xmllint">xmllint</h1>
-
 <h2 id="what-is-it">What is it?</h2>
-
 <p>xmllint is a command line XML tool.</p>
-
 <h2 id="how-do-i-get-it">How do I get it?</h2>
-
 <p>It&rsquo;s built in to MacOS (ships with the <code>libxml2</code> package) 🎉</p>
-
 <h2 id="why-is-it-useful">Why is it useful?</h2>
-
 <p>Do you ever find yourself reading XML formatted like this?</p>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;shiporder orderid=&quot;889923&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;shiporder.xsd&quot;&gt; &lt;orderperson&gt;John Smith&lt;/orderperson&gt; &lt;shipto&gt; &lt;name&gt;Ola Nordmann&lt;/name&gt; &lt;address&gt;Langgt 23&lt;/address&gt; &lt;city&gt;4000 Stavanger&lt;/city&gt; &lt;country&gt;Norway&lt;/country&gt; &lt;/shipto&gt; &lt;item&gt; &lt;title&gt;Empire Burlesque&lt;/title&gt; &lt;note&gt;Special Edition&lt;/note&gt; &lt;quantity&gt;1&lt;/quantity&gt; &lt;price&gt;10.90&lt;/price&gt; &lt;/item&gt; &lt;item&gt; &lt;title&gt;Hide your heart&lt;/title&gt; &lt;quantity&gt;1&lt;/quantity&gt; &lt;price&gt;9.90&lt;/price&gt; &lt;/item&gt; &lt;/shiporder&gt;
-</code></pre>
-
-<p><em>Example XML taken from <a href="https://www.w3schools.com/xml/schema_example.asp">W3Schools</a></em></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span> <span style="color:#f92672">&lt;shiporder</span> <span style="color:#a6e22e">orderid=</span><span style="color:#e6db74">&#34;889923&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;shiporder.xsd&#34;</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;orderperson&gt;</span>John Smith<span style="color:#f92672">&lt;/orderperson&gt;</span> <span style="color:#f92672">&lt;shipto&gt;</span> <span style="color:#f92672">&lt;name&gt;</span>Ola Nordmann<span style="color:#f92672">&lt;/name&gt;</span> <span style="color:#f92672">&lt;address&gt;</span>Langgt 23<span style="color:#f92672">&lt;/address&gt;</span> <span style="color:#f92672">&lt;city&gt;</span>4000 Stavanger<span style="color:#f92672">&lt;/city&gt;</span> <span style="color:#f92672">&lt;country&gt;</span>Norway<span style="color:#f92672">&lt;/country&gt;</span> <span style="color:#f92672">&lt;/shipto&gt;</span> <span style="color:#f92672">&lt;item&gt;</span> <span style="color:#f92672">&lt;title&gt;</span>Empire Burlesque<span style="color:#f92672">&lt;/title&gt;</span> <span style="color:#f92672">&lt;note&gt;</span>Special Edition<span style="color:#f92672">&lt;/note&gt;</span> <span style="color:#f92672">&lt;quantity&gt;</span>1<span style="color:#f92672">&lt;/quantity&gt;</span> <span style="color:#f92672">&lt;price&gt;</span>10.90<span style="color:#f92672">&lt;/price&gt;</span> <span style="color:#f92672">&lt;/item&gt;</span> <span style="color:#f92672">&lt;item&gt;</span> <span style="color:#f92672">&lt;title&gt;</span>Hide your heart<span style="color:#f92672">&lt;/title&gt;</span> <span style="color:#f92672">&lt;quantity&gt;</span>1<span style="color:#f92672">&lt;/quantity&gt;</span> <span style="color:#f92672">&lt;price&gt;</span>9.90<span style="color:#f92672">&lt;/price&gt;</span> <span style="color:#f92672">&lt;/item&gt;</span> <span style="color:#f92672">&lt;/shiporder&gt;</span>
+</code></pre></div><p><em>Example XML taken from <a href="https://www.w3schools.com/xml/schema_example.asp">W3Schools</a></em></p>
 <p>Now imagine working on a 100+mb XML file with over 100mil characters&hellip; If only we could format the XML nicely, it might be a bit easier to read.</p>
-
 <p>This is where <code>xmllint</code> comes in:</p>
-
-<pre><code class="language-bash">xmllint --format example.xml
-</code></pre>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;shiporder xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; orderid=&quot;889923&quot; xsi:noNamespaceSchemaLocation=&quot;shiporder.xsd&quot;&gt;
-  &lt;orderperson&gt;John Smith&lt;/orderperson&gt;
-  &lt;shipto&gt;
-    &lt;name&gt;Ola Nordmann&lt;/name&gt;
-    &lt;address&gt;Langgt 23&lt;/address&gt;
-    &lt;city&gt;4000 Stavanger&lt;/city&gt;
-    &lt;country&gt;Norway&lt;/country&gt;
-  &lt;/shipto&gt;
-  &lt;item&gt;
-    &lt;title&gt;Empire Burlesque&lt;/title&gt;
-    &lt;note&gt;Special Edition&lt;/note&gt;
-    &lt;quantity&gt;1&lt;/quantity&gt;
-    &lt;price&gt;10.90&lt;/price&gt;
-  &lt;/item&gt;
-  &lt;item&gt;
-    &lt;title&gt;Hide your heart&lt;/title&gt;
-    &lt;quantity&gt;1&lt;/quantity&gt;
-    &lt;price&gt;9.90&lt;/price&gt;
-  &lt;/item&gt;
-&lt;/shiporder&gt;
-</code></pre>
-
-<p>Much easier to read!</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xmllint --format example.xml
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;shiporder</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">orderid=</span><span style="color:#e6db74">&#34;889923&#34;</span> <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;shiporder.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;orderperson&gt;</span>John Smith<span style="color:#f92672">&lt;/orderperson&gt;</span>
+  <span style="color:#f92672">&lt;shipto&gt;</span>
+    <span style="color:#f92672">&lt;name&gt;</span>Ola Nordmann<span style="color:#f92672">&lt;/name&gt;</span>
+    <span style="color:#f92672">&lt;address&gt;</span>Langgt 23<span style="color:#f92672">&lt;/address&gt;</span>
+    <span style="color:#f92672">&lt;city&gt;</span>4000 Stavanger<span style="color:#f92672">&lt;/city&gt;</span>
+    <span style="color:#f92672">&lt;country&gt;</span>Norway<span style="color:#f92672">&lt;/country&gt;</span>
+  <span style="color:#f92672">&lt;/shipto&gt;</span>
+  <span style="color:#f92672">&lt;item&gt;</span>
+    <span style="color:#f92672">&lt;title&gt;</span>Empire Burlesque<span style="color:#f92672">&lt;/title&gt;</span>
+    <span style="color:#f92672">&lt;note&gt;</span>Special Edition<span style="color:#f92672">&lt;/note&gt;</span>
+    <span style="color:#f92672">&lt;quantity&gt;</span>1<span style="color:#f92672">&lt;/quantity&gt;</span>
+    <span style="color:#f92672">&lt;price&gt;</span>10.90<span style="color:#f92672">&lt;/price&gt;</span>
+  <span style="color:#f92672">&lt;/item&gt;</span>
+  <span style="color:#f92672">&lt;item&gt;</span>
+    <span style="color:#f92672">&lt;title&gt;</span>Hide your heart<span style="color:#f92672">&lt;/title&gt;</span>
+    <span style="color:#f92672">&lt;quantity&gt;</span>1<span style="color:#f92672">&lt;/quantity&gt;</span>
+    <span style="color:#f92672">&lt;price&gt;</span>9.90<span style="color:#f92672">&lt;/price&gt;</span>
+  <span style="color:#f92672">&lt;/item&gt;</span>
+<span style="color:#f92672">&lt;/shiporder&gt;</span>
+</code></pre></div><p>Much easier to read!</p>
 <p>And of course, since <code>xmllint</code> is used via the command line, you can use all the other tools and tricks available to you to do further processing:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xmllint --format example.xml &gt; formatted.xml  <span style="color:#75715e"># Write formatted output to new file</span>
 
-<pre><code class="language-bash">xmllint --format example.xml &gt; formatted.xml  # Write formatted output to new file
+xmllint --format example.xml | wc -l  <span style="color:#75715e"># Get number of lines in the XML document</span>
 
-xmllint --format example.xml | wc -l  # Get number of lines in the XML document
-
-xmllint --format example.xml | grep -A 3 -B 1 &quot;Hide your heart&quot;  # Find details of item called &quot;Hide your heart&quot;
-</code></pre>
-</div>
+xmllint --format example.xml | grep -A <span style="color:#ae81ff">3</span> -B <span style="color:#ae81ff">1</span> <span style="color:#e6db74">&#34;Hide your heart&#34;</span>  <span style="color:#75715e"># Find details of item called &#34;Hide your heart&#34;</span>
+</code></pre></div></div>
 
     
     
@@ -218,7 +198,7 @@ xmllint --format example.xml | grep -A 3 -B 1 &quot;Hide your heart&quot;  # Fin
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
        

@@ -13,7 +13,7 @@
     }
 
     :root {
-        --accent: DarkSlateGrey;
+        --accent: DarkGreen;
         --border-width:  5px ;
     }
 
@@ -58,9 +58,9 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.57.2" />
+ <meta name="generator" content="Hugo 0.80.0" />
         
-
+        
         
     </head>
 
@@ -102,13 +102,11 @@
                     
                         <ul class="nav navbar-nav navbar-right">
                             
-                                <li class="navbar-icon"><a href="https://github.com/craigrosie/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://500px.com/craigrosiephotography" target="_blank"><i class="fa fa-500px"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1"><i class="fa fa-lastfm"></i></a></li>
                             
                         </ul>
                     
@@ -134,41 +132,30 @@
     <h4><a href="/posts/vim-copy-to-clipboard/">Copy to the clipboard in Vim</a></h4>
     <h5>October 1, 2015</h5>
     
-    <a href="https://craigrosie.github.io/tags/vim"><kbd class="item-tag">vim</kbd></a>
+    <a href="https://craigrosie.github.io/tags/vim">
+        <kbd class="item-tag">vim</kbd>
+    </a>
     
 
 </div>
 
 
     <br> <div class="text-justify"><p>I love using Vim for making quick changes to files when I&rsquo;m working on the command line. I even use the Vim keyboard shortcuts in Sublime Text, and these days I struggle to use any text editor that does not allow me to enable Vim key bindings.</p>
-
 <p>Recently, I found myself needing to copy text to the clipboard from a text file that I had open in Vim. I am pretty ashamed to say that I didn&rsquo;t think there&rsquo;d be a key combination to allow me to do this, so I always resorted to using the mouse.</p>
-
 <p>This was getting pretty tedious - I mean, the whole point of Vim is that you shouldn&rsquo;t ever need a mouse! <em>Obviously</em> there is a way to do it with the keyboard!</p>
-
 <p>Here we go:</p>
-
-<pre><code>  &quot;*y
-</code></pre>
-
-<p>Wait, what? Let&rsquo;s break that down:</p>
-
+<pre><code>&quot;*y
+</code></pre><p>Wait, what? Let&rsquo;s break that down:</p>
 <ul>
 <li><code>&quot;</code> - specify a register</li>
 <li><code>*</code> - use the <code>*</code> (clipboard) register</li>
 <li><code>y</code> - standard Vim yank command</li>
 </ul>
-
 <p><strong>Note:</strong> You will need to have a section of text visually selected to use this command (i.e. by using the <code>v</code> Vim command)</p>
-
 <p>You can also paste in a similar way:</p>
-
-<pre><code>  &quot;*p
-</code></pre>
-
-<p>More information can be found in <a href="http://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-using-vim">this StackOverflow thread</a></p>
-
-<!--- Links -->
+<pre><code>&quot;*p
+</code></pre><p>More information can be found in <a href="http://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-using-vim">this StackOverflow thread</a></p>
+<!-- raw HTML omitted -->
 </div>
 
     
@@ -182,7 +169,7 @@
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
        

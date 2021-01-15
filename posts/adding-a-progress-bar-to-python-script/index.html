@@ -13,7 +13,7 @@
     }
 
     :root {
-        --accent: DarkSlateGrey;
+        --accent: DarkGreen;
         --border-width:  5px ;
     }
 
@@ -58,9 +58,9 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.57.2" />
+ <meta name="generator" content="Hugo 0.80.0" />
         
-
+        
         
     </head>
 
@@ -102,13 +102,11 @@
                     
                         <ul class="nav navbar-nav navbar-right">
                             
-                                <li class="navbar-icon"><a href="https://github.com/craigrosie/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://500px.com/craigrosiephotography" target="_blank"><i class="fa fa-500px"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1"><i class="fa fa-lastfm"></i></a></li>
                             
                         </ul>
                     
@@ -134,45 +132,36 @@
     <h4><a href="/posts/adding-a-progress-bar-to-python-script/">Adding a progress bar to your Python script</a></h4>
     <h5>October 12, 2015</h5>
     
-    <a href="https://craigrosie.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    <a href="https://craigrosie.github.io/tags/python">
+        <kbd class="item-tag">python</kbd>
+    </a>
     
-    <a href="https://craigrosie.github.io/tags/tqdm"><kbd class="item-tag">tqdm</kbd></a>
+    <a href="https://craigrosie.github.io/tags/tqdm">
+        <kbd class="item-tag">tqdm</kbd>
+    </a>
     
 
 </div>
 
 
-    <br> <div class="text-justify">
-
-<h4 id="the-problem">The problem?</h4>
-
+    <br> <div class="text-justify"><h4 id="the-problem">The problem?</h4>
 <p>You&rsquo;re writing a Python script which carries out some tasks in a loop. Maybe you&rsquo;re processing data in a bunch of files, or scraping a list of websites. Whatever it is, the task takes anything from a few seconds to a few minutes to complete. Wouldn&rsquo;t it be great if you could visualise progress (in the command line no less!) easily, and without some ugly <code>print()</code> statements in your code?</p>
-
 <h4 id="the-solution">The solution!</h4>
-
 <p>Enter <a href="https://github.com/tqdm/tqdm">tqdm</a>! Lets create a trivial example to show the functionality:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+<span style="color:#f92672">from</span> tqdm <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 
-<pre><code class="language-python">import time
-from tqdm import *
-
-for x in tqdm(range(10)):
-    time.sleep(1)
-</code></pre>
-
-<p>Voila! Progess (bar)!</p>
-
-<p><img src="https://cloud.githubusercontent.com/assets/6367914/10430121/5ceba8f8-70f5-11e5-80ea-48741dca109c.gif" alt="tqdm" /></p>
-
+<span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> tqdm(range(<span style="color:#ae81ff">10</span>)):
+    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</code></pre></div><p>Voila! Progess (bar)!</p>
+<p><img src="https://cloud.githubusercontent.com/assets/6367914/10430121/5ceba8f8-70f5-11e5-80ea-48741dca109c.gif" alt="tqdm"></p>
 <p>The great thing about <a href="https://github.com/tqdm/tqdm">tqdm</a> is that is can take any iterable, and also has a bunch of options, which you can find out more about in the <a href="https://github.com/tqdm/tqdm#documentation">tqdm source code</a>.</p>
-
 <p><strong>Notes:</strong></p>
-
 <ol>
 <li>If you want to learn more about <a href="https://github.com/yyuu/pyenv">pyenv</a> and <a href="https://github.com/yyuu/pyenv-virtualenv">pyenv virtualenv</a> and why they&rsquo;re <strong>awesome</strong>, you can check out my <a href="/blog/setting-up-pyenv-virtualenv/">previous post!</a></li>
 <li>The code used to generate the gif above actually uses the following code when generating the loop: <code>for x in tqdm(range(10), leave=True)</code>, as by default the progress bar will be &lsquo;erased&rsquo; when the iterable terminates. Find out more <a href="https://github.com/tqdm/tqdm#documentation">here</a>.</li>
 </ol>
-
-<!--- Links -->
+<!-- raw HTML omitted -->
 </div>
 
     
@@ -186,7 +175,7 @@ for x in tqdm(range(10)):
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
        

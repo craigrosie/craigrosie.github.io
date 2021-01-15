@@ -13,7 +13,7 @@
     }
 
     :root {
-        --accent: DarkSlateGrey;
+        --accent: DarkGreen;
         --border-width:  5px ;
     }
 
@@ -58,9 +58,9 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.57.2" />
+ <meta name="generator" content="Hugo 0.80.0" />
         
-
+        
         
     </head>
 
@@ -102,13 +102,11 @@
                     
                         <ul class="nav navbar-nav navbar-right">
                             
-                                <li class="navbar-icon"><a href="https://github.com/craigrosie/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://500px.com/craigrosiephotography" target="_blank"><i class="fa fa-500px"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1"><i class="fa fa-lastfm"></i></a></li>
                             
                         </ul>
                     
@@ -134,30 +132,28 @@
     <h4><a href="/posts/command-line-browser-shortcuts/">Command Line Browser Shortcuts - Git</a></h4>
     <h5>May 11, 2018</h5>
     
-    <a href="https://craigrosie.github.io/tags/command-line"><kbd class="item-tag">command line</kbd></a>
+    <a href="https://craigrosie.github.io/tags/command%20line">
+        <kbd class="item-tag">command line</kbd>
+    </a>
     
-    <a href="https://craigrosie.github.io/tags/git"><kbd class="item-tag">git</kbd></a>
+    <a href="https://craigrosie.github.io/tags/git">
+        <kbd class="item-tag">git</kbd>
+    </a>
     
 
 </div>
 
 
     <br> <div class="text-justify"><p>The other day I was making some maintenance changes across a bunch of different git repos, and for each change I need to open a Merge Request in GitLab. This meant that I needed to browse to each repo&rsquo;s page in GitLab, which is not too bad if the git hosting software you&rsquo;re using is speedy, however our instance of GitLab was&hellip; not.</p>
-
 <p>After sitting watching the GitLab loading bar for seconds at a time, I thought &ldquo;<em>there must be a better way to do this from the command line</em>&rdquo;. What I wanted was to be able to write a super-short command in my terminal, for the command to figure out which git repo I&rsquo;m in, what the url of that repo&rsquo;s homepage is, and then open that url in my browser. Oh, and it should work across git hosting services too, since I have some personal projects on Github.</p>
-
 <p>Enter the <code>og</code>:</p>
-
-<pre><code class="language-bash">function og() {
-    origin_ssh_url=$(git config --get remote.origin.url)
-    host=$(echo $origin_ssh_url | cut -d: -f1 | cut -d@ -f2)
-    repo_name=$(echo $origin_ssh_url | cut -d: -f2 | cut -d. -f1)
-    open &quot;https://$host/$repo_name&quot;
-}
-</code></pre>
-
-<p>There&rsquo;s probably a better way to achieve the same result without the gratuitous use of <code>cut</code>, but the above was written in a flash of &ldquo;<em>good grief why haven&rsquo;t I written something like this before?!</em>&rdquo;.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">function</span> og<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    origin_ssh_url<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>git config --get remote.origin.url<span style="color:#66d9ef">)</span>
+    host<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $origin_ssh_url | cut -d: -f1 | cut -d@ -f2<span style="color:#66d9ef">)</span>
+    repo_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $origin_ssh_url | cut -d: -f2 | cut -d. -f1<span style="color:#66d9ef">)</span>
+    open <span style="color:#e6db74">&#34;https://</span>$host<span style="color:#e6db74">/</span>$repo_name<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>There&rsquo;s probably a better way to achieve the same result without the gratuitous use of <code>cut</code>, but the above was written in a flash of &ldquo;<em>good grief why haven&rsquo;t I written something like this before?!</em>&rdquo;.</p>
 <p>The idea is simple - extract the host &amp; repo name and then use those to construct a url that we can pass to <code>open</code>. The great thing about this approach is it&rsquo;s independent of any particular git hosting service; I&rsquo;ve personally tested it with an internally-hosted GitLab instance as well as the ubiquitous github.com.</p>
 </div>
 
@@ -172,7 +168,7 @@
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
        

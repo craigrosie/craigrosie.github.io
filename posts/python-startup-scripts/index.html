@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>(I)Python Startup Scripts</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: DarkGreen;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://craigrosie.github.io//css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.80.0" />
+        
+        
+        
+    </head>
+
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">(I)Python Startup Scripts</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1"><i class="fa fa-lastfm"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/posts/python-startup-scripts/">(I)Python Startup Scripts</a></h4>
+    <h5>January 15, 2021</h5>
+    
+    <a href="https://craigrosie.github.io/tags/python">
+        <kbd class="item-tag">python</kbd>
+    </a>
+    
+    <a href="https://craigrosie.github.io/tags/ipython">
+        <kbd class="item-tag">ipython</kbd>
+    </a>
+    
+    <a href="https://craigrosie.github.io/tags/command%20line">
+        <kbd class="item-tag">command line</kbd>
+    </a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify"><!-- raw HTML omitted -->
+<ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#ipython">IPython</a></li>
+<li><a href="#but-why">But why?</a>
+<ul>
+<li><a href="#basic-imports">Basic Imports</a></li>
+<li><a href="#custom-functions">Custom Functions</a></li>
+<li><a href="#taking-it-to-the-next-level">Taking it to the Next Level</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Are you a frequent user of Python or <a href="https://ipython.org/">IPython</a> interactive shells? Do you find yourself constantly reimporting the same libraries (<em>I&rsquo;m looking at you</em> <code>from pprint import pprint</code> 👀), or redefining the same helper functions?</p>
+<p>This post will describe how to set up some scripts that will be automatically executed when you run <code>python</code> or <code>ipython</code> in your terminal.</p>
+<h2 id="python">Python</h2>
+<p>When the Python interpreter starts, it looks for a <a href="https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP">PYTHONSTARTUP</a> environment variable. This can be set to point to a Python file which will be executed before you&rsquo;re dropped into the Python interpreter.</p>
+<p>So if you create a <code>~/.custom_startup.py</code> with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;hello from custom_startup.py!&#34;</span>)
+</code></pre></div><p>Then execute <code>export PYTHONSTARTUP=~/.custom_startup.py</code>.</p>
+<p>Running <code>python</code> in your terminal, you&rsquo;ll now see <code>hello from custom_startup.py</code> printed before the <code>&gt;&gt;&gt;</code> prompt in the interpreter:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python
+Python 3.9.0 <span style="color:#f92672">(</span>default, Dec  <span style="color:#ae81ff">1</span> 2020, 10:32:01<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>Clang 12.0.0 <span style="color:#f92672">(</span>clang-1200.0.32.21<span style="color:#f92672">)]</span> on darwin
+Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> or <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information.
+hello from custom_startup.py
+&gt;&gt;&gt;
+</code></pre></div><h2 id="ipython">IPython</h2>
+<p>The <a href="https://switowski.com/blog/ipython-startup-files">process for IPython is slightly different</a> - there&rsquo;s no environment variable to set, and IPython expects startup scripts (yes, that&rsquo;s intentionally plural) to live in <code>~/.ipython/profile_default/startup/</code>. There&rsquo;s even a <code>README</code> in that folder with some brief instructions:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat ~/.ipython/profile_default/startup/README
+This is the IPython startup directory
+
+.py and .ipy files in this directory will be run *prior* to any code or files
+specified via the exec_lines or exec_files configurables whenever you load this profile.
+
+Files will be run in lexicographical order, so you can control the execution order of files
+with a prefix, e.g.::
+
+    00-first.py
+    50-middle.py
+    99-last.ipy
+</code></pre></div><p>The keen-eyed amongst you will also have noticed the <code>profile_default</code> in the path above. This means you can have separate startup scripts for different IPython profiles. This is not a feature I use currently and therefore I won&rsquo;t cover it in more detail in this blog, but if you&rsquo;re interested then check out the <a href="https://ipython.org/ipython-doc/stable/config/intro.html#profiles">IPython docs</a>.</p>
+<h2 id="but-why">But why?</h2>
+<p>Now that you&rsquo;ve created your (I)Python startup scripts, you can start adding some useful imports, custom functions or taking your Python interpreter experience to a whole new level.</p>
+<h3 id="basic-imports">Basic Imports</h3>
+<p>As mentioned in the intro, do you find yourself always using <code>pprint</code> to print out data structures in a nicer format? Or maybe you&rsquo;re always using the <code>os</code> or <code>math</code> modules? Add these as imports to your startup script, and they&rsquo;ll be immediately accessible in your Python interpreter.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+</code></pre></div><p><em>~/.custom_startup.py or ~/.ipython/profile_default/startup/00-custom.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">$</span> python
+Python <span style="color:#ae81ff">3.9</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> (default, Dec  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>:<span style="color:#ae81ff">32</span>:<span style="color:#ae81ff">01</span>)
+[Clang <span style="color:#ae81ff">12.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> (clang<span style="color:#f92672">-</span><span style="color:#ae81ff">1200.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">32.21</span>)] on darwin
+Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information<span style="color:#f92672">.</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> math
+<span style="color:#f92672">&lt;</span>module <span style="color:#e6db74">&#39;math&#39;</span> <span style="color:#f92672">from</span> <span style="color:#e6db74">&#39;/Users/craig.rosie/.pyenv/versions/3.9.0/lib/python3.9/lib-dynload/math.cpython-39-darwin.so&#39;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> os
+<span style="color:#f92672">&lt;</span>module <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">from</span> <span style="color:#e6db74">&#39;/Users/craig.rosie/.pyenv/versions/3.9.0/lib/python3.9/os.py&#39;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> pprint
+<span style="color:#f92672">&lt;</span>function pprint at <span style="color:#ae81ff">0x1020afc10</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><p><em>Look ma, no import errors!</em></p>
+<h3 id="custom-functions">Custom Functions</h3>
+<p>Maybe you find yourself writing the same helper functions over and over again. Or paging through your interpreter history trying to find the last time you wrote them. Wouldn&rsquo;t it be great if they were just always available?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># previous imports excluded for brevity</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dir_no_dunder</span>(module):
+    <span style="color:#e6db74">&#34;&#34;&#34;Like the dir() builtin, but only prints non-dunder attributes.&#34;&#34;&#34;</span>
+    pprint([attr <span style="color:#66d9ef">for</span> attr <span style="color:#f92672">in</span> dir(module) <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> attr<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;_&#34;</span>)])
+</code></pre></div><p><em>~/.custom_startup.py or ~/.ipython/profile_default/startup/00-custom.py</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">$</span> python
+Python <span style="color:#ae81ff">3.9</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> (default, Dec  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>:<span style="color:#ae81ff">32</span>:<span style="color:#ae81ff">01</span>)
+[Clang <span style="color:#ae81ff">12.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span> (clang<span style="color:#f92672">-</span><span style="color:#ae81ff">1200.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">32.21</span>)] on darwin
+Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information<span style="color:#f92672">.</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> dir_no_dunder(math)
+[<span style="color:#e6db74">&#39;acos&#39;</span>,
+ <span style="color:#e6db74">&#39;acosh&#39;</span>,
+ <span style="color:#e6db74">&#39;asin&#39;</span>,
+ <span style="color:#e6db74">&#39;asinh&#39;</span>,
+ <span style="color:#e6db74">&#39;atan&#39;</span>,
+ <span style="color:#e6db74">&#39;atan2&#39;</span>,
+ <span style="color:#e6db74">&#39;atanh&#39;</span>,
+ <span style="color:#f92672">...</span>
+</code></pre></div><h3 id="taking-it-to-the-next-level">Taking it to the Next Level</h3>
+<p>Now for something that will give your interpreter superpowers. The <a href="https://github.com/willmcgugan/rich">Rich</a> library by <a href="https://twitter.com/willmcgugan">Will McGugan</a> is an excellent addition to your startup script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
+<span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
+<span style="color:#f92672">from</span> rich <span style="color:#f92672">import</span> pretty, <span style="color:#66d9ef">print</span>, inspect
+
+pretty<span style="color:#f92672">.</span>install()
+
+inspectm <span style="color:#f92672">=</span> partial(inspect, methods<span style="color:#f92672">=</span>True)
+</code></pre></div><p><em>~/.custom_startup.py or ~/.ipython/profile_default/startup/00-custom.py</em></p>
+<p>For a start, you get nicely coloured and formatted output of data structures:</p>
+<p><img src="https://user-images.githubusercontent.com/6367914/104753956-955f8f00-5750-11eb-9814-696562a05feb.png" alt="image"></p>
+<p>But perhaps <em>the</em> killer feature is <code>inspect()</code>:</p>
+<p><img src="https://user-images.githubusercontent.com/6367914/104754236-e53e5600-5750-11eb-91c0-b5e1715d37c9.png" alt="image"></p>
+<p>We can also create our own custom version of <code>inspect()</code>, which I&rsquo;ve done using a <a href="https://docs.python.org/3/library/functools.html#functools.partial">partial</a>, to give a function that shows you all the methods for a module or object: <code>inspectm = partial(inspect, methods=True)</code></p>
+<p><img src="https://user-images.githubusercontent.com/6367914/104754658-64cc2500-5751-11eb-83a6-6230833c6fd7.png" alt="image"></p>
+<p>Enjoy your interpreter with your new-found superpowers! 🎉</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

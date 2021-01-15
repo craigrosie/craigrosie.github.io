@@ -13,7 +13,7 @@
     }
 
     :root {
-        --accent: DarkSlateGrey;
+        --accent: DarkGreen;
         --border-width:  5px ;
     }
 
@@ -58,9 +58,9 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.57.2" />
+ <meta name="generator" content="Hugo 0.80.0" />
         
-
+        
         
     </head>
 
@@ -102,13 +102,11 @@
                     
                         <ul class="nav navbar-nav navbar-right">
                             
-                                <li class="navbar-icon"><a href="https://github.com/craigrosie/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li class="navbar-icon"><a href="https://github.com/craigrosie/"><i class="fa fa-github"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/craigrosie/"><i class="fa fa-linkedin"></i></a></li>
                             
-                                <li class="navbar-icon"><a href="https://500px.com/craigrosiephotography" target="_blank"><i class="fa fa-500px"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+                                <li class="navbar-icon"><a href="https://www.last.fm/user/craigrosie1"><i class="fa fa-lastfm"></i></a></li>
                             
                         </ul>
                     
@@ -134,39 +132,35 @@
     <h4><a href="/posts/pycharm-with-pyenv/">Getting PyCharm to work with pyenv local</a></h4>
     <h5>October 7, 2015</h5>
     
-    <a href="https://craigrosie.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    <a href="https://craigrosie.github.io/tags/python">
+        <kbd class="item-tag">python</kbd>
+    </a>
     
-    <a href="https://craigrosie.github.io/tags/pycharm"><kbd class="item-tag">pycharm</kbd></a>
+    <a href="https://craigrosie.github.io/tags/pycharm">
+        <kbd class="item-tag">pycharm</kbd>
+    </a>
     
-    <a href="https://craigrosie.github.io/tags/pyenv"><kbd class="item-tag">pyenv</kbd></a>
+    <a href="https://craigrosie.github.io/tags/pyenv">
+        <kbd class="item-tag">pyenv</kbd>
+    </a>
     
 
 </div>
 
 
     <br> <div class="text-justify"><p>I write the majority of my code in <a href="http://www.sublimetext.com/3">Sublime Text</a>, favouring it over a full blown IDE like <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> or <a href="https://eclipse.org/">Eclipse</a>. However, I cannot argue with the debugging abilities that an IDE provides.</p>
-
-<p>Recently I tried to use PyCharm&rsquo;s debugging functionality, and although when adding the folder as a PyCharm project and specifying the relevant <a href="https://github.com/yyuu/pyenv-virtualenv">pyenv virtualenv</a><sup>1</sup> Python path (see image below), PyCharm just could not seem to find it.</p>
-
-<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-add-project.png" alt="pyenv-add-project" /></p>
-
+<p>Recently I tried to use PyCharm&rsquo;s debugging functionality, and although when adding the folder as a PyCharm project and specifying the relevant <a href="https://github.com/yyuu/pyenv-virtualenv">pyenv virtualenv</a><!-- raw HTML omitted -->1<!-- raw HTML omitted --> Python path (see image below), PyCharm just could not seem to find it.</p>
+<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-add-project.png" alt="pyenv-add-project"></p>
 <p>After a bit of prodding and poking, I discovered that in the main PyCharm preferences, the Project Interpreter was still set to the pyenv global Python version, like so:</p>
-
-<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-project-interpreter-3.4.3.png" alt="pyenv-interpreter-3.4.3" /></p>
-
+<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-project-interpreter-3.4.3.png" alt="pyenv-interpreter-3.4.3"></p>
 <p>Changing this to use the pyenv virtualenv Python path for the project fixed things, and allowed me to debug my script.</p>
-
-<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-project-interpreter-virtualenv.png" alt="pyenv-interpreter-virtualenv" /></p>
-
+<p><img src="/img/2015-10-07-pycharm-with-pyenv/pycharm-project-interpreter-virtualenv.png" alt="pyenv-interpreter-virtualenv"></p>
 <p>This was definitely not an obvious fix (although admittedly I have very little PyCharm experience), so I hope it helps someone else out. I know I&rsquo;ll refer back to this when I inevitably run into the same issue again in ~6 months!</p>
-
 <p><strong>Notes:</strong></p>
-
 <ol>
 <li>If you want to learn more about <a href="https://github.com/yyuu/pyenv">pyenv</a> and <a href="https://github.com/yyuu/pyenv-virtualenv">pyenv virtualenv</a> and why they&rsquo;re <strong>awesome</strong>, you can check out my <a href="/setting-up-pyenv-virtualenv.html">previous post!</a></li>
 </ol>
-
-<!--- Links -->
+<!-- raw HTML omitted -->
 </div>
 
     
@@ -180,7 +174,7 @@
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
        

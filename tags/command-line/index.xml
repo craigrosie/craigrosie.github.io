@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>command line on Craig Rosie</title>
@@ -6,10 +6,16 @@
     <description>Recent content in command line on Craig Rosie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://craigrosie.github.io/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 15 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://craigrosie.github.io/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(I)Python Startup Scripts</title>
+      <link>https://craigrosie.github.io/posts/python-startup-scripts/</link>
+      <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://craigrosie.github.io/posts/python-startup-scripts/</guid>
+      <description>Python IPython But why?  Basic Imports Custom Functions Taking it to the Next Level    Are you a frequent user of Python or IPython interactive shells? Do you find yourself constantly reimporting the same libraries (I&amp;rsquo;m looking at you from pprint import pprint 👀), or redefining the same helper functions?
+This post will describe how to set up some scripts that will be automatically executed when you run python or ipython in your terminal.</description>
+    </item>
     
     <item>
       <title>Command Line Browser Shortcuts - Git</title>
